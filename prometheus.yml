@@ -1,0 +1,33 @@
+# my global config
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Load rules (if any in future)
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# Scrape configs
+scrape_configs:
+  # Prometheus monitors itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          app: 'prometheus'
+
+  # Add this block to scrape your FastAPI metrics
+  - job_name: 'fastapi-app'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:8000']
+        labels:
+          app: 'fastapi-pipeline'
