@@ -90,17 +90,7 @@ http://localhost:8501
 
 ---
 
-## ✅ Sample Output
 
-*(Add a screenshot in assets folder and link here)*
-
----
-
-## 📘 License
-
-This project is open-source and free to use for educational and monitoring purposes.
-
----
 
 ## 🙌 Author
 
